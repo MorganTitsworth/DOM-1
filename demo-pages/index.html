@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelloWorld2</title>
+    <style>
+        /* Presumptive styling for the page */
+
+        /* Gap possibly needed between sections */
+        .parent{
+            width: 500px;
+            height: 800px;
+            background-color: red;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        /* REFACTOR TO PLACE IMAGE PROPERLY - Top and Left will need to be adjusted */
+        .profilePic{
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: flex-end;
+        }
+        .profilePic img{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+        .userBadges{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        .top{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+    </style>
+</head>
+<body>
+    <div id="root" class="parent">
+        <!-- Profile Picture (positioned absolutely relative to parrent) -->
+        <div id='profilePicture'>
+            <img id='pic'>
+            <div id="userBadges">
+                <img id="badge1" >
+                <img id="badge2" >
+                <img id="badge3" >
+                <img id="badge4" >
+            </div>
+        </div>
+        <!-- lower section, broken down further into 2 more sections -->
+        <div id="bottomElement">
+            <div id="top">
+                <h1 id="nameLarge"></h1>
+                <p id="nameSmall"></p>
+                <p id="prefix"></p>
+            </div>
+            <div id="bottom">
+                <h1 class="aboutMe">About Me</h1>
+                <p id="aboutText"></p>
+                <h1 id="note">Note</h1>
+                <p id="noteText"></p>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    // TEMPLATE USER OBJECT
+    //This could be anything, but it's a good idea to have a template to work with.
+    let user = [
+        {
+            firstName: 'Duane',
+            lastName: 'Mitchell',
+            prefix: 'Mr.',
+            about: 'I am a web developer.',
+            member: Date.now(),
+            note: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Non distinctio adipisci, dicta quisquam sed quod vel dolore facilis maiores eaque quo, laudantium cum tempora harum eum. Architecto asperiores ad voluptatum deserunt sint.'
+        },
+        {
+            firstName: 'Morgan',
+            lastName: 'Titsworth',
+            prefix: 'Mr.',
+            about: 'I am a web developer.',
+            member: Date.now(), 
+            note: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Non distinctio adipisci, dicta quisquam sed quod vel dolore facilis maiores eaque quo, laudantium cum tempora harum eum. Architecto asperiores ad voluptatum deserunt sint.'
+        }
+    ]
+    //variable declarations
+    const parentElement = document.getElementById('root');
+    let backgroundImage = 'https://images.pexels.com/photos/949587/pexels-photo-949587.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
+    let profilePicture = 'https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg'
+    let nameLarge = document.getElementById('nameLarge');
+    let nameSmall = document.getElementById('nameSmall');
+    let prefix = document.getElementById('prefix');
+    let aboutText = document.getElementById('aboutText');
+    let note = document.getElementById('note');
+    let noteText = document.getElementById('noteText');
+    let pic = document.getElementById('pic');
+    let pictureContainer = document.getElementById('profilePicture');
+    // changing the DOM
+    nameLarge.textContent = user[0].firstName
+    nameSmall.textContent = user[0].firstName
+    prefix.textContent = user[0].prefix
+    aboutText.textContent = user[0].about
+    noteText.textContent = user[0].note
+    pic.src = profilePicture
+    pictureContainer.className = 'profilePic'
+    // const newChildElement = document.createElement('h1');
+    // newChildElement.textContent = 'Your shoelaces are untied.';
+    // newChildElement.className = 'green';
+    // parentElement.appendChild(newChildElement);
+</script>
+</html>
+
+<!-- 
+    
+User object structure considerations:
+
+background image -
+profile picture -
+name -
+prefix -
+about me -
+member since -
+note (anything) - 
+
+-->
