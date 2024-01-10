@@ -10,3 +10,5 @@ The lesson videos from code alongs, extra pages from introductory or supplemento
 1) Clone repository.
 3) Create your own branch, be sure to push to origin.
 2) Use the project-folder directory to create all of your assignment pages, this will be the 'root' of your folder structure for this exercise.
+
+Did you read me?
