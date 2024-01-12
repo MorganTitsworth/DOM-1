@@ -1,0 +1,121 @@
+body {
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    align-items: center;
+    margin: auto;
+    background: rgb(195, 109, 34);
+    background: linear-gradient(
+        5deg,
+        rgba(195, 109, 34, 1) 5%,
+        rgba(45, 101, 253, 1) 100%
+    );
+}
+
+/* Small Card */
+
+.containerCardSmall {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+        133deg,
+        rgba(0, 0, 0, 1) 5%,
+        rgba(108, 108, 108, 1) 100%
+    );
+    width: 20%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    color: white;
+    box-shadow: 0px 10px 30px 4px rgb(59, 59, 59);
+    transition-duration: 300ms;
+}
+
+.containerCardSmall:hover {
+    box-shadow: 0px 10px 30px 4px rgb(20, 20, 20);
+    transition-duration: 500ms;
+}
+
+#profileImg {
+    width: 100%;
+}
+
+.profileImg {
+    border-radius: 100px;
+    overflow: hidden;
+    width: 200px;
+    height: 200px;
+    box-shadow: 0px 10px 30px 4px rgb(20, 20, 20);
+}
+
+/* Large Card */
+
+.containerCardLarge {
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+        133deg,
+        rgba(0, 0, 0, 1) 5%,
+        rgba(108, 108, 108, 1) 100%
+    );
+    height: 350px;
+    padding: 20px;
+    border-radius: 20px;
+    width: 20%;
+    box-shadow: 0px 10px 30px 4px rgb(59, 59, 59);
+    transition-duration: 300ms;
+}
+
+.containerCardLarge:hover {
+    box-shadow: 0px 10px 30px 4px rgb(20, 20, 20);
+    transition-duration: 500ms;
+}
+
+.detailsContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.detailsTitles {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 25%;
+    height: 60%;
+}
+
+.detailsTitles > h3 {
+    margin: 8px;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.details > p {
+    height: 100%;
+    margin: 10px;
+}
+
+/*  */
