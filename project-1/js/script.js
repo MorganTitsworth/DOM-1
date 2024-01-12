@@ -28,14 +28,14 @@ let profileImg = document.getElementById("profileImg");
 profileImg.setAttribute("src", userData.smallCard.profilePic);
 
 let smallCardheadings = document.querySelectorAll(
-    "div.containerCardSmall > h2, div.containerCardSmall h3"
+    "section.containerCardSmall > h2, section.containerCardSmall > h3"
 );
 smallCardheadings[0].textContent = userData.smallCard.nameHeading;
 smallCardheadings[1].textContent = userData.smallCard.jobTitle;
 
 // Large Card Content
 let largeCardHeadings = document.querySelectorAll(
-    "div.containerCardLarge > h2, div.detailsContainer > div > h3"
+    "section.containerCardLarge > h2, section.detailsContainer > div > h3"
 );
 largeCardHeadings[0].textContent = userData.largeCard.detailsHeadings.title;
 largeCardHeadings[1].textContent = userData.largeCard.detailsHeadings.name;
@@ -45,7 +45,7 @@ largeCardHeadings[4].textContent = userData.largeCard.detailsHeadings.email;
 largeCardHeadings[5].textContent = userData.largeCard.detailsHeadings.address;
 
 let largeCardContent = document.querySelectorAll(
-    "div.detailsContainer > div > p"
+    "section.detailsContainer > section > p"
 );
 largeCardContent[0].textContent = userData.largeCard.detailsContent.name;
 largeCardContent[1].textContent = userData.largeCard.detailsContent.age;
