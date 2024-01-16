@@ -1,0 +1,35 @@
+.circle {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    background: #000
+  }
+
+  .header{
+display: flex;
+
+/*justify-content: space-evenly;*/
+  }
+
+  #youtube{
+    display:flex;
+    flex-basis: 0;
+    justify-content: left;
+  }
+
+  .header form{
+margin:auto; /* using auto centers this and pushes everything away*/
+  }
+
+  .fa-div{
+    display:flex; /*flex the contents in this class*/
+  }
+
+  .header input{
+    height:30px;
+    width:500px;
+  }

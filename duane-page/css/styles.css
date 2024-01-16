@@ -1,0 +1,17 @@
+.video, .video2{
+    /* this will make the column break 
+    max-width:50%; */
+    
+    max-height:auto;
+   /* width: 246px; */
+}
+
+.videoPic{
+width:100%;
+height:50%;
+border-radius: 20px;
+}
+
+p{
+    font-size: small;
+}

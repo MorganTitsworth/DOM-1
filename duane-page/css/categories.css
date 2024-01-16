@@ -1,0 +1,13 @@
+button{
+    margin: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+.categories{
+   white-space: nowrap;
+   overflow-x: auto;
+}
+
+.fa{
+    display: none;;
+}
