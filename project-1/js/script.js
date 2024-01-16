@@ -30,12 +30,13 @@ profileImg.setAttribute("src", userData.smallCard.profilePic);
 let smallCardheadings = document.querySelectorAll(
     "section.containerCardSmall > h2, section.containerCardSmall > h3"
 );
+
 smallCardheadings[0].textContent = userData.smallCard.nameHeading;
 smallCardheadings[1].textContent = userData.smallCard.jobTitle;
 
 // Large Card Content
 let largeCardHeadings = document.querySelectorAll(
-    "section.containerCardLarge > h2, section.detailsContainer > div > h3"
+    "section.containerCardLarge > h2, section.detailsContainer > section > h3"
 );
 largeCardHeadings[0].textContent = userData.largeCard.detailsHeadings.title;
 largeCardHeadings[1].textContent = userData.largeCard.detailsHeadings.name;
