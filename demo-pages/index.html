@@ -181,21 +181,6 @@
       <img class="otherImg y4" src="./fun.jpg" />
     </div>
 
-    <div class="cats">
-      <img width="100px" height="100px" src="./dancing-kitten.gif" />
-      <img width="100px" height="100px" src="./dancing-kitten.gif" />
-      <img width="100px" height="100px" src="./dancing-kitten.gif" />
-      <img width="100px" height="100px" src="./dancing-kitten.gif" />
-      <img width="100px" height="100px" src="./dancing-kitten.gif" />
-      <img width="100px" height="100px" src="./dancing-kitten.gif" />
-      <img width="100px" height="100px" src="./dancing-kitten.gif" />
-      <img width="100px" height="100px" src="./dancing-kitten.gif" />
-      <img width="100px" height="100px" src="./dancing-kitten.gif" />
-      <img width="100px" height="100px" src="./dancing-kitten.gif" />
-      <img width="100px" height="100px" src="./dancing-kitten.gif" />
-      <img width="100px" height="100px" src="./dancing-kitten.gif" />
-    </div>
-
     <div id="root" class="parent">
       <div class="child">
         <img class="yugioh" src="./yugioh.jpg" />
@@ -218,7 +203,6 @@
         lastName: "Pepe",
         prefix: "Mr. ",
         about: "Influencer",
-        member: Date.now(),
         attack: "99999",
         defense: "99999",
         note: "Pepe the Frog (/ˈpɛpeɪ/ PEP-ay) is a webcomic character and Internet meme created by cartoonist Matt Furie. Designed as a green anthropomorphic frog with a humanoid body, Pepe originated in Furie's 2005 comic Boy's Club.",
@@ -233,5 +217,17 @@
     attack.innerText = user[0].attack;
     const defense = document.getElementById("defense");
     defense.innerText = user[0].defense;
+
+    const catsDiv = document.createElement("div");
+    catsDiv.classList.add("cats");
+    catsDiv.style.zIndex = "-1";
+    document.body.appendChild(catsDiv);
+
+    for (let x = 0; x < 11; x++) {
+      let catsImg = document.createElement("img");
+      catsImg.style.height = "100px";
+      catsImg.src = "./dancing-kitten.gif";
+      catsDiv.appendChild(catsImg);
+    }
   </script>
 </html>
