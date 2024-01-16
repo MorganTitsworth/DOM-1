@@ -1,0 +1,28 @@
+body {
+    font-family: 'Arial', sans-serif; color: rgb(165, 0, 0);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Ensure the container takes at least the full height of the viewport */
+}
+
+.container {
+    background-color: #d1d1d1;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.statTitle {
+    display: flex;
+    align-items: flex-start;
+}
+
+.statBox {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+}
