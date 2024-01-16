@@ -1,140 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HelloWorld2</title>
     <style>
-        /* Presumptive styling for the page */
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100vh;
+        overflow: hidden;
+      }
 
-        /* Gap possibly needed between sections */
-        .parent{
-            width: 500px;
-            height: 800px;
-            background-color: red;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+      .parent {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+      }
+
+      .child {
+        position: relative;
+        background-color: blue;
+        display: flex;
+        justify-content: center;
+      }
+
+      .pepe {
+        position: absolute;
+        width: 232px;
+        height: 240px;
+        top: 21%;
+      }
+
+      #name {
+        position: absolute;
+        top: 1%;
+        left: 12%;
+        font-size: 24px;
+      }
+
+      #description {
+        position: absolute;
+        bottom: 7%;
+
+        font-size: 10px;
+        width: 80%;
+      }
+
+      .stats {
+        display: flex;
+        bottom: 10px;
+        font-size: 12px;
+      }
+
+      #attack {
+        position: absolute;
+        right: 92px;
+        bottom: 12px;
+      }
+
+      #defense {
+        position: absolute;
+        right: 27px;
+        bottom: 12px;
+      }
+      .other,
+      .otherImg {
+        position: absolute;
+        top: 0;
+        width: 200px;
+        height: 200px;
+      }
+
+      .otherImg {
+        width: 200px;
+        height: 200px;
+      }
+
+      .x {
+        animation: x 3s linear infinite alternate;
+      }
+
+      .y {
+        animation: y 2s linear infinite alternate;
+      }
+
+      @keyframes x {
+        100% {
+          transform: translateX(calc(100vw - 200px));
         }
-        /* REFACTOR TO PLACE IMAGE PROPERLY - Top and Left will need to be adjusted */
-        .profilePic{
-            position: absolute;
-            top: 0;
-            left: 0;
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-end;
-            align-items: flex-end;
+      }
+
+      @keyframes y {
+        100% {
+          transform: translateY(calc(100vh - 200px));
         }
-        .profilePic img{
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            border: 2px solid white;
+      }
+
+      .x2 {
+        animation: x2 3s linear infinite alternate;
+      }
+
+      .y2 {
+        animation: y2 5s linear infinite alternate;
+      }
+
+      @keyframes x2 {
+        100% {
+          transform: translateX(calc(100vw - 200px));
         }
-        .userBadges{
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
+      }
+
+      @keyframes y2 {
+        100% {
+          transform: translateY(calc(100vh - 200px));
         }
-        .top{
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: flex-start;
+      }
+      .x3 {
+        animation: x3 4s linear infinite alternate;
+      }
+
+      .y3 {
+        animation: y3 8s linear infinite alternate;
+      }
+
+      @keyframes x3 {
+        100% {
+          transform: translateX(calc(100vw - 200px));
         }
+      }
+
+      @keyframes y3 {
+        100% {
+          transform: translateY(calc(100vh - 200px));
+        }
+      }
+
+      .x4 {
+        animation: x4 8s linear infinite alternate;
+      }
+
+      .y4 {
+        animation: y4 4s linear infinite alternate;
+      }
+
+      @keyframes x4 {
+        100% {
+          transform: translateX(calc(100vw - 200px));
+        }
+      }
+
+      @keyframes y4 {
+        100% {
+          transform: translateY(calc(100vh - 200px));
+        }
+      }
+
+      .cats {
+        position: absolute;
+        display: flex;
+        width: 100vw;
+        justify-content: space-evenly;
+      }
     </style>
-</head>
-<body>
-    <div id="root" class="parent">
-        <!-- Profile Picture (positioned absolutely relative to parrent) -->
-        <div id='profilePicture'>
-            <img id='pic'>
-            <div id="userBadges">
-                <img id="badge1" >
-                <img id="badge2" >
-                <img id="badge3" >
-                <img id="badge4" >
-            </div>
-        </div>
-        <!-- lower section, broken down further into 2 more sections -->
-        <div id="bottomElement">
-            <div id="top">
-                <h1 id="nameLarge"></h1>
-                <p id="nameSmall"></p>
-                <p id="prefix"></p>
-            </div>
-            <div id="bottom">
-                <h1 class="aboutMe">About Me</h1>
-                <p id="aboutText"></p>
-                <h1 id="note">Note</h1>
-                <p id="noteText"></p>
-            </div>
-        </div>
+  </head>
+  <body>
+    <div class="other x">
+      <img class="otherImg y" src="./pog.avif" />
     </div>
-</body>
+    <div class="other x2">
+      <img class="otherImg y2" src="./trapcard.jpg" />
+    </div>
+    <div class="other x3">
+      <img class="otherImg y3" src="./uno.jpg" />
+    </div>
+    <div class="other x4">
+      <img class="otherImg y4" src="./fun.jpg" />
+    </div>
 
-<script>
-    // TEMPLATE USER OBJECT
-    //This could be anything, but it's a good idea to have a template to work with.
+    <div class="cats">
+      <img width="100px" height="100px" src="./dancing-kitten.gif" />
+      <img width="100px" height="100px" src="./dancing-kitten.gif" />
+      <img width="100px" height="100px" src="./dancing-kitten.gif" />
+      <img width="100px" height="100px" src="./dancing-kitten.gif" />
+      <img width="100px" height="100px" src="./dancing-kitten.gif" />
+      <img width="100px" height="100px" src="./dancing-kitten.gif" />
+      <img width="100px" height="100px" src="./dancing-kitten.gif" />
+      <img width="100px" height="100px" src="./dancing-kitten.gif" />
+      <img width="100px" height="100px" src="./dancing-kitten.gif" />
+      <img width="100px" height="100px" src="./dancing-kitten.gif" />
+      <img width="100px" height="100px" src="./dancing-kitten.gif" />
+      <img width="100px" height="100px" src="./dancing-kitten.gif" />
+    </div>
+
+    <div id="root" class="parent">
+      <div class="child">
+        <img class="yugioh" src="./yugioh.jpg" />
+        <img class="pepe" src="./pepe.jpg" />
+        <p id="name"></p>
+        <p id="description"></p>
+        <div class="stats">
+          <p id="attack"></p>
+          <p id="defense"></p>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    /* // TEMPLATE USER OBJECT */
+    /* //This could be anything, but it's a good idea to have a template to work with. */
     let user = [
-        {
-            firstName: 'Duane',
-            lastName: 'Mitchell',
-            prefix: 'Mr.',
-            about: 'I am a web developer.',
-            member: Date.now(),
-            note: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Non distinctio adipisci, dicta quisquam sed quod vel dolore facilis maiores eaque quo, laudantium cum tempora harum eum. Architecto asperiores ad voluptatum deserunt sint.'
-        },
-        {
-            firstName: 'Morgan',
-            lastName: 'Titsworth',
-            prefix: 'Mr.',
-            about: 'I am a web developer.',
-            member: Date.now(), 
-            note: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Non distinctio adipisci, dicta quisquam sed quod vel dolore facilis maiores eaque quo, laudantium cum tempora harum eum. Architecto asperiores ad voluptatum deserunt sint.'
-        }
-    ]
-    //variable declarations
-    const parentElement = document.getElementById('root');
-    let backgroundImage = 'https://images.pexels.com/photos/949587/pexels-photo-949587.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
-    let profilePicture = 'https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg'
-    let nameLarge = document.getElementById('nameLarge');
-    let nameSmall = document.getElementById('nameSmall');
-    let prefix = document.getElementById('prefix');
-    let aboutText = document.getElementById('aboutText');
-    let note = document.getElementById('note');
-    let noteText = document.getElementById('noteText');
-    let pic = document.getElementById('pic');
-    let pictureContainer = document.getElementById('profilePicture');
-    // changing the DOM
-    nameLarge.textContent = user[0].firstName
-    nameSmall.textContent = user[0].firstName
-    prefix.textContent = user[0].prefix
-    aboutText.textContent = user[0].about
-    noteText.textContent = user[0].note
-    pic.src = profilePicture
-    pictureContainer.className = 'profilePic'
-    // const newChildElement = document.createElement('h1');
-    // newChildElement.textContent = 'Your shoelaces are untied.';
-    // newChildElement.className = 'green';
-    // parentElement.appendChild(newChildElement);
-</script>
+      {
+        firstName: "Lord ",
+        lastName: "Pepe",
+        prefix: "Mr. ",
+        about: "Influencer",
+        member: Date.now(),
+        attack: "99999",
+        defense: "99999",
+        note: "Pepe the Frog (/ˈpɛpeɪ/ PEP-ay) is a webcomic character and Internet meme created by cartoonist Matt Furie. Designed as a green anthropomorphic frog with a humanoid body, Pepe originated in Furie's 2005 comic Boy's Club.",
+      },
+    ];
+
+    const title = document.getElementById("name");
+    title.innerText = user[0].prefix + user[0].firstName + user[0].lastName;
+    const description = document.getElementById("description");
+    description.innerText = user[0].note;
+    const attack = document.getElementById("attack");
+    attack.innerText = user[0].attack;
+    const defense = document.getElementById("defense");
+    defense.innerText = user[0].defense;
+  </script>
 </html>
-
-<!-- 
-    
-User object structure considerations:
-
-background image -
-profile picture -
-name -
-prefix -
-about me -
-member since -
-note (anything) - 
-
--->
