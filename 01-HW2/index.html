@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DANCECAT</title>
+    <link rel="icon" type="image/x-icon" href="./dancing-kitten.gif" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        position: relative;
+      }
+
+      #new-cat-container {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        text-align: center;
+      }
+
+      .x0 {
+        top: 0;
+        animation: x0 3s linear infinite alternate;
+      }
+
+      .y0 {
+        animation: y0 2s linear infinite alternate;
+      }
+
+      @keyframes x0 {
+        100% {
+          transform: translateX(calc(100vw - 180px));
+        }
+      }
+
+      @keyframes y0 {
+        100% {
+          transform: translateY(calc(100vh - 180px));
+        }
+      }
+
+      .x1 {
+        right: 0;
+        animation: x1 1s linear infinite alternate;
+      }
+
+      .y1 {
+        animation: y1 2s linear infinite alternate;
+      }
+
+      @keyframes x1 {
+        100% {
+          transform: translateX(calc(-100vw + 180px));
+        }
+      }
+
+      @keyframes y1 {
+        100% {
+          transform: translateY(calc(100vh - 180px));
+        }
+      }
+
+      .x2 {
+        bottom: 0;
+        animation: x2 4s linear infinite alternate;
+      }
+
+      .y2 {
+        animation: y2 2s linear infinite alternate;
+      }
+
+      @keyframes x2 {
+        100% {
+          transform: translateX(calc(100vw - 180px));
+        }
+      }
+
+      @keyframes y2 {
+        100% {
+          transform: translateY(calc(-100vh + 180px));
+        }
+      }
+
+      .x3 {
+        bottom: 0;
+        right: 0;
+        animation: x3 2s linear infinite alternate;
+      }
+
+      .y3 {
+        animation: y3 1s linear infinite alternate;
+      }
+
+      @keyframes x3 {
+        100% {
+          transform: translateX(calc(-100vw + 180px));
+        }
+      }
+
+      @keyframes y3 {
+        100% {
+          transform: translateY(calc(-100vh + 180px));
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img id="cat" src="static-kitten.png" disabled />
+      <div id="new-cat-container"></div>
+    </div>
+  </body>
+  <script>
+    // mouse eneter event
+    let cat = document.getElementById("cat");
+    let newCatContainer = document.getElementById("new-cat-container");
+
+    // mouse enter event
+    cat.addEventListener("mouseenter", () => {
+      cat.src = "dancing-kitten.gif";
+    });
+
+    // mouse out event
+    cat.addEventListener("mouseout", () => {
+      cat.src = "static-kitten.png";
+    });
+
+    // dbl click event
+    cat.addEventListener("click", () => {
+      let temp = random();
+
+      if (newCatContainer.children.length <= 30) {
+        let newDiv = document.createElement("div");
+        newDiv.style.position = "absolute";
+        newDiv.classList.add(`x${temp}`);
+        newDiv.style.height = "180px";
+        newDiv.style.width = "180px";
+
+        let newCat = document.createElement("img");
+        newCat.src = "big-mouth-cat.gif";
+        newCat.classList.add("new-cat");
+        newCat.classList.add(`y${temp}`);
+        newCat.style.height = "180px";
+        newCat.style.height = "180px";
+        newCat.style.zIndex = "2";
+        newCat.style.margin = "0 .25em";
+        newDiv.appendChild(newCat);
+        newCatContainer.appendChild(newDiv);
+      } else alert("too many cats ");
+    });
+
+    let count = 0;
+    // dbl click event
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "r") {
+        count += 1;
+        if (count === 2) {
+          location.reload();
+          count = 0;
+        }
+      }
+    });
+
+    function random() {
+      return Math.floor(Math.random() * 4);
+    }
+  </script>
+</html>
