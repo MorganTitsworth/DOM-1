@@ -32,3 +32,10 @@ function showMeme() {
 function hideMeme() {
     meme.classList.toggle('showMeme')
 }
+
+//Spin Starts 
+cards[2].addEventListener('click', spinCard)
+
+function spinCard() {
+    cards[2].classList.toggle('spin')
+}

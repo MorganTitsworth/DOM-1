@@ -24,11 +24,12 @@
     align-items: center;
     gap: 15px;
     border-radius: 10px;
-    transition: transform 500ms;
     transition: box-shadow 200ms ease-in-out;
 }
 
 .card:hover {
+    transition: transform .5s;
+    color: rgb(255, 24, 24);
     cursor: pointer;
     box-shadow: 0px 10px 12px 5px rgba(0, 0, 0, 0.568);
     transform: scale(1.1) ;
@@ -54,6 +55,11 @@ button {
     border: 2px solid rgba(72, 72, 72, 0.637);
 }
 
+.darkCard:hover {
+    color: rgb(92, 240, 81);
+    box-shadow: 0px 10px 12px 5px rgba(133, 247, 67, 0.694);
+}
+
 .darkCard > button {
     color: whitesmoke;
     background-image: linear-gradient(to left top, #000000, #323232, #3b3b3b, #3e3e3e, #2b2b2b);
@@ -63,8 +69,8 @@ button {
     display: flex;
     position: absolute;
     display: none;
-    opacity: 0;
-    transition: dislpay 0s, opacity 0.5s linear;
+    transition: dislpay 2s;
+    z-index: 1;
 }
 
 .meme {
@@ -82,6 +88,19 @@ button {
 }
 
 .showMeme {
-    opacity: 100;
     display: block;
+}
+
+.spin {
+    color: white;
+    transition: transform 2s;
+    transform: rotate(0deg);
+    background-color: rgba(0, 162, 255, 0.744);
+    
+
+}
+
+.spin:hover {
+    color: white;
+    transform: rotate(720deg);
 }
